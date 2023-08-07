@@ -6,7 +6,7 @@ GlyphPicker - mjfsは、[IPAmj明朝](https://moji.or.jp/ipafont/ipamjfont/)のW
 動作環境
 ---
 
-Python3.x fonttools Brotli Flask
+IPAmj明朝 Python3.x fonttools Brotli Flask
 
 Usage
 ---
