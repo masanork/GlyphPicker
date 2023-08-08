@@ -23,7 +23,7 @@ Webサーバーを立ち上げたら、ブラウザで http://localhost:5000/tes
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webfont Test</title>
+    <title>Webfont Dynamic Generation Test</title>
     <style>
         @font-face {
             font-family: 'SubsettedMJM';
