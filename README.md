@@ -15,7 +15,7 @@ Usage
 python mjfs.py
 ```
 
-Webサーバーを立ち上げたら、ブラウザで http://localhost:5000/test を開いてください。必要なグリフのみ抽出されたIPAmj明朝を使ったテストページが表示されます。以下のようなHTMLを書いてWebfontとして参照することで、異体字を含む氏名を正確に表示できます。
+Webサーバーを立ち上げたら、ブラウザで [テストページ http://localhost:5000/test](http://localhost:5000/test) を開いてください。必要なグリフのみ抽出されたIPAmj明朝を使ったテストページが表示されます。以下のようなHTMLを書いてWebfontとして参照することで、異体字を含む氏名を正確に表示できます。
 
 ``` html
 <!DOCTYPE html>
