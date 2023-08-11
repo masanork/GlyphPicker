@@ -12,6 +12,7 @@ Python3.x fonttools Brotli Flask
 
 Usage
 ---
+
 まず、同じディレクトリに利用したいフォントを配置し、GlyphPicker.pyで参照するフォントを実際のパスに変更してください。例えば下の例はNotoSansJPを参照するようになっています。
 
 ``` python
