@@ -12,6 +12,20 @@ Python3.x fonttools Brotli Flask
 
 Usage
 ---
+まず、同じディレクトリに利用したいフォントを配置し、GlyphPicker.pyで参照するフォントを実際のパスに変更してください。例えば下の例はNotoSansJPを参照するようになっています。
+
+``` python
+# GlyphPicker.py
+
+from fontTools.ttLib import TTFont
+from fontTools.subset import Subsetter, Options
+
+# FONT_PATH = 'your_font_file_path.ttf'
+FONT_PATH = 'NotoSansJP-VariableFont_wght.ttf'
+
+def subset_font(text, output_file=None):
+    font = TTFont(FONT_PATH)
+```
 
 README.mdに含まれる文字を抽出してWebFontを生成する例。
 
