@@ -1,4 +1,4 @@
-GlyphPicker: TrueTypeフォントから必要なグリフを抜き出す
+GlyphPicker: TTFから必要なグリフを抽出
 ===
 
 GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出してWOFF2フォーマットのWebFontを生成するツールです。コマンドラインから呼び出せる mkwf.py と、Webサーバーとして動作する FontServer.py、必要な関数群を持つGlyphPicker.pyから構成されています。
@@ -24,7 +24,7 @@ WebFontサーバーを立ち上げて動的にWebFontを生成する例。
 python FontServer.py
 ```
 
-Webサーバーを立ち上げたら、ブラウザで [テストページ http://localhost:5000/test](http://localhost:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
+Webサーバーを立ち上げたら、ブラウザで [テストページ http://127.0.0.1:5000/test](http://127.0.0.1:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
 
 利用例
 ---
