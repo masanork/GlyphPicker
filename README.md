@@ -16,13 +16,13 @@ Usage
 README.mdに含まれる文字を抽出してWebFontを生成する例。
 
 ``` bash
-$ python mkwf.py README.md
+python mkwf.py README.md
 ```
 
 WebFontサーバーを立ち上げて動的にWebFontを生成する例。
 
 ``` bash
-$ python FontServer.py
+python FontServer.py
 ```
 
 Webサーバーを立ち上げたら、ブラウザで [テストページ http://127.0.0.1:5000/test](http://127.0.0.1:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
