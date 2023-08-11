@@ -1,42 +1,32 @@
-GlyphPicker - mjfs: IPAmj Font Server
+GlyphPicker: TrueTypeフォントから必要なグリフを抜き出す
 ===
 
-GlyphPicker - mjfsは、[IPAmj明朝](https://moji.or.jp/ipafont/ipamjfont/)のWOFF2フォントを動的に生成するWebサーバです。氏名漢字など必要な文字のみを抽出したWOFF2フォントを動的に生成することで、数十KBといった非常に小さな容量で異体字を含む氏名を表示できます。
+GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出してWOFF2フォーマットのWebFontを生成するツールです。コマンドラインから呼び出せる mkwf.py と、Webサーバーとして動作する FontServer.py、必要な関数群を持つGlyphPicker.pyから構成されています。
+これまで日本語は文字数が多いことから、なかなかWebfontで自由に様々な書体を組み合わせて使うことが難しかったのですが、実際に使われているグリフだけを抜き出すことで、様々な書体を組み合わせて使うことや、氏名の異体字など特殊な字形を表示することなどが容易になります。
 
 動作環境
 ---
 
-IPAmj明朝 Python3.x fonttools Brotli Flask
+Python3.x fonttools Brotli Flask
 
 Usage
 ---
 
+README.mdに含まれる文字を抽出してWebFontを生成する例。
+
 ``` bash
-python mjfs.py
+python mkwf.py README.md
 ```
 
-Webサーバーを立ち上げたら、ブラウザで [テストページ http://localhost:5000/test](http://localhost:5000/test) を開いてください。必要なグリフのみ抽出されたIPAmj明朝を使ったテストページが表示されます。以下のようなHTMLを書いてWebfontとして参照することで、異体字を含む氏名を正確に表示できます。
+WebFontサーバーを立ち上げて動的にWebFontを生成する例。
 
-``` html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webfont Dynamic Generation Test</title>
-    <style>
-        @font-face {
-            font-family: 'SubsettedMJM';
-            src: url('http://localhost:5000/font.woff2?text=辺辺󠄂邉邉󠄙邉󠄛邉󠄟邉󠄚邉󠄜邉󠄝邉󠄗邊󠄏邊邊󠄎邊󠄍邊󠄌邊󠄋邊󠄊邊󠄐邊󠄒') format('woff2');
-        }
-
-        body {
-            font-family: 'SubsettedMJM', sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <h1>辺辺󠄂邉邉󠄙邉󠄛邉󠄟邉󠄚邉󠄜邉󠄝邉󠄗邊󠄏邊邊󠄎邊󠄍邊󠄌邊󠄋邊󠄊邊󠄐邊󠄒</h1>
-</body>
-</html>
+``` bash
+python FontServer.py
 ```
+
+Webサーバーを立ち上げたら、ブラウザで [テストページ http://localhost:5000/test](http://localhost:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
+
+利用例
+---
+[青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.html)
+![Safariで大正活字っぽい？フォントT5を使って縦書き表示した『自叙伝』](jijoden.png)
