@@ -1,13 +1,10 @@
 GlyphPicker: TTFからグリフを抽出しHTMLに埋込
 ===
 
-GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出してWOFF2フォーマットのWebFontを生成するツールです。日本語は文字数が多いことから、フォントサイズが大きくなりがちで、なかなかWebfontで自由に様々な書体を組み合わせて使うことが難しかったのですが、実際に使われているグリフだけを抜き出してHTMLに埋め込むことで、様々な書体を組み合わせて使うことや、氏名の異体字など特殊な字形を表示することなどが容易になります。
+GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出してWOFF2フォーマットのWebFontを生成するツールです。日本語は文字数が多いことから、フォントサイズが大きくなりがちで、Webfontで様々な書体を組み合わせて使うことが難しかったのですが、実際に使われているグリフだけを抜き出してHTMLに埋め込むことで、多様な端末環境を対象に様々な書体を組み合わせたり、氏名の異体字など特殊な字形を表示することが容易になります。
 
 利用例
 ---
-
-[青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.html)
-大正活字っぽい？フォントT5が22.5MBのところ、必要なグリフを抜き出したWebFontは4.8MBに。
 
 [青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](kusamakura.wfe.html)
 しっぽり明朝 v3が10MBのところ、必要なグリフを抜き出したWebFontは1.2MB、当該WebFontを埋め込んだHTMLは約2MBに。
@@ -71,6 +68,6 @@ Webサーバーを立ち上げたら、ブラウザで [テストページ http:
 謝辞
 ---
 
-デモにあたっては[青空文庫](https://www.aozora.gr.jp/)のテキストファイル、[IPAmj明朝](https://moji.or.jp/mojikiban/font/) 、[大正活字っぽい？フォントT5](https://booth.pm/ja/items/738177)、 [しっぽり明朝](https://fontdasu.com/shippori-mincho/)を利用させていただきました。
+デモにあたっては[青空文庫](https://www.aozora.gr.jp/)、 [しっぽり明朝](https://fontdasu.com/shippori-mincho/)、[IPAmj明朝](https://moji.or.jp/mojikiban/font/) を利用させていただきました。
 aozip2txt.pyの作成、『青空文庫』の外字や注釈を整形するに当たっては、[「青空文庫の外字をPythonでUnicodeに置換」](https://qiita.com/kichiki/items/bb65f7b57e09789a05ce)を参考にさせていただきました。
 本プログラムの作成に当たっては、ChatGPT Code Interpreter、Github Copilotの出力を利用しています。
