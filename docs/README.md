@@ -21,7 +21,7 @@ Python3.x bs4 fonttools Brotli Flask が必要です。
 
 使い方
 ---
-コマンドラインから呼び出して渡されたコンテンツに含まれる文字をWebFontとして切り出してHTMLに埋め込む mkwfpk.py 、WebFontサーバーとして動作する FontServer.py、青空文庫のzipファイルからテキストを切り出して文字コードやタグを整形する aozip2txt.py から構成されます。
+コマンドラインから呼び出して渡されたコンテンツに含まれる文字をWebFontとして切り出してHTMLに埋め込む mkwfe.py 、題名など個別の文字をWebFont Base URIとしてCSSに簡単に張り付けられるように出力する str2wfb64、WebFontサーバーとして動作する FontServer.py、青空文庫のzipファイルからテキストを切り出して文字コードやタグを整形する aozip2txt.py から構成されます。
 
 まず、ソースコードと同じディレクトリに利用したいフォントを配置し、GlyphPicker.pyで参照するフォントを実際のパスに変更してください。例えば下の例では、『草枕』のデモで利用している[しっぽり明朝](https://fontdasu.com/shippori-mincho/)を参照するように設定しています。
 
