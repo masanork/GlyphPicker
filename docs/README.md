@@ -55,6 +55,8 @@ python mkwfe.py kusamakura.txt -v
 # kusamakura.txt.woff2と、参照するkusamakura.wf.html、
 # WebFontを埋め込んだkusamakura.wfe.htmlを生成
 # -vオプションを付与することで縦書きHTMLを生成
+python str2wfb64.py "夏目漱石草枕" path_to_bold_font.ttf
+# 標準出力に太字フォントが出力されるので手作業でCSSに追加
 ```
 
 WebFontサーバーを立ち上げて動的にWebFontを生成する例。
