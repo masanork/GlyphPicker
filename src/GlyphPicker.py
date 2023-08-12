@@ -3,8 +3,7 @@
 from fontTools.ttLib import TTFont
 from fontTools.subset import Subsetter, Options
 
-# FONT_PATH = 'your_font_file_path.ttf'
-FONT_PATH = 'ipamjm.ttf'
+FONT_PATH = 'your_font_file_path.ttf'
 
 def subset_font(text, output_file=None):
     font = TTFont(FONT_PATH)
