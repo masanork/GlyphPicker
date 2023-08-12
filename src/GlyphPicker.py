@@ -4,6 +4,8 @@ from fontTools.ttLib import TTFont
 from fontTools.subset import Subsetter, Options
 
 FONT_PATH = 'your_font_file_path.ttf'
+# FONT_PATH = 'fonts/taisyokatujippoi7T5.ttf'
+# FONT_PATH = 'fonts/ShipporiMincho-OTF-Medium.otf'
 
 def subset_font(text, output_file=None):
     font = TTFont(FONT_PATH)

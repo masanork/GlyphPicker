@@ -161,4 +161,7 @@ cython_debug/
 
 *.ttf
 *.woff2
+src/fonts
+src/*.txt
+src/*.html
 .DS_Store
