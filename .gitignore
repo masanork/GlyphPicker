@@ -160,4 +160,5 @@ cython_debug/
 #.idea/
 
 *.ttf
+*.woff2
 .DS_Store
