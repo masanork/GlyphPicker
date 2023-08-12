@@ -9,8 +9,10 @@ GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出�
 ---
 
 [青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.html)
+大正活字っぽい？フォントT5が22.5MBのところ、必要なグリフを抜き出したWebFontは4.8MBに。
 ![青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.png)
 [氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVSwfpk.html)
+TrueTypeフォント形式のIPAmj明朝が46.7MBのところ、必要なグリフを抜き出したWebFontは93KB、当該WebFontを埋め込んだHTMLは126KBに。
 ![氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](nameivs.png)
 
 動作環境
