@@ -41,7 +41,7 @@ def subset_font(text, output_file=None):
 以下にNameIVS.htmlに含まれる文字を抽出してWebFontを生成し、WebFontを埋め込んだ NameIVS.wfe.html を生成する例を示します。
 
 ``` bash
-python mkwfpk.py NameIVS.html
+python mkwfe.py NameIVS.html
 # NameIVS.html.woff2と、そのWebFontを参照するNameIVS.wf.html、
 # WebFontを埋め込んだNameIVS.wfe.htmlを生成
 ```
@@ -51,7 +51,7 @@ python mkwfpk.py NameIVS.html
 ``` bash
 python aozip2txt.py 776_ruby_6020.zip
 # 776_ruby_6020.zipを展開して、kusamakura.txtを生成
-python mkwfpk.py kusamakura.txt -v
+python mkwfe.py kusamakura.txt -v
 # kusamakura.txt.woff2と、参照するkusamakura.wf.html、
 # WebFontを埋め込んだkusamakura.wfe.htmlを生成
 # -vオプションを付与することで縦書きHTMLを生成
