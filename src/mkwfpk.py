@@ -24,7 +24,7 @@ def extract_title_and_author(txt_content):
 
 def convert_txt_to_html(txt_content, vertical=False):
     """TXTの内容をHTMLに変換する関数"""
-    vertical_style = "writing-mode: vertical-rl; text-orientation: mixed; line-height: 1.5;" if vertical else "line-height: 1.5;"
+    vertical_style = "writing-mode: vertical-rl; text-orientation: mixed; line-height: 1.5; font-size: 2em;" if vertical else "line-height: 1.5; font-size: 2em;"
     sepia_background = "background-color: #F4ECD8;"  # Sepia tone color
     
     title, author, content = extract_title_and_author(txt_content)
