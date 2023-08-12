@@ -7,7 +7,7 @@ GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出�
 ---
 
 [青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](kusamakura.wfe.html)
-しっぽり明朝 v3が10MBのところ、必要なグリフを抜き出したWebFontは1.2MB、当該WebFontを埋め込んだHTMLは約2MBに。
+しっぽり明朝 v3が10MBのところ、必要なグリフを抜き出したWebFontは1.2MB、当該WebFontをData URIとして埋め込んだHTMLは約2MBに。題名・著者は太字で。
 ![青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](kusamakura.png)
 
 [氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVSwfpk.html)
@@ -56,7 +56,7 @@ python mkwfe.py kusamakura.txt -v
 # WebFontを埋め込んだkusamakura.wfe.htmlを生成
 # -vオプションを付与することで縦書きHTMLを生成
 python str2wfb64.py "夏目漱石草枕" path_to_bold_font.ttf
-# 標準出力に太字フォントが出力されるので手作業でCSSに追加
+# 標準出力に太字フォントWOFFのData URIが出力されるので手作業でCSSに追加
 ```
 
 WebFontサーバーを立ち上げて動的にWebFontを生成する例。
