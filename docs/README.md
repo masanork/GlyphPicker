@@ -8,9 +8,10 @@ GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出�
 利用例
 ---
 
+[青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.html)
+![青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.png)
 [氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVSwfpk.html)
 ![氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](nameivs.png)
-[青空文庫 大杉榮『自叙伝』＋大正活字っぽい？フォントT5](jijoden.html)
 
 動作環境
 ---
