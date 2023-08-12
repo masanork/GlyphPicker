@@ -67,3 +67,10 @@ python FontServer.py
 ```
 
 Webサーバーを立ち上げたら、ブラウザで [テストページ http://127.0.0.1:5000/test](http://127.0.0.1:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
+
+謝辞
+---
+
+デモにあたっては[青空文庫](https://www.aozora.gr.jp/)のテキストファイル、[IPAmj明朝](https://moji.or.jp/mojikiban/font/) [大正活字っぽい？フォントT5](https://booth.pm/ja/items/738177) [しっぽり明朝](https://fontdasu.com/shippori-mincho/)を利用させていただきました。
+aozip2txt.pyの作成、『青空文庫』の外字や注釈を整形するに当たっては、[青空文庫の外字をPythonでUnicodeに置換](https://qiita.com/kichiki/items/bb65f7b57e09789a05ce)を参考にさせていただきました。
+本プログラムの作成に当たっては、ChatGPT Code Interpreter、Github Copilotの出力を利用しています。
