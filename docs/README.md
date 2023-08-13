@@ -10,7 +10,7 @@ GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出�
 しっぽり明朝 v3が10MBのところ、必要なグリフを抜き出したWebFontは1.2MB、当該WebFontをData URIとして埋め込んだHTMLは約2.1MBに。
 ![青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](kusamakura.png)
 
-[氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVSwfe.html)
+[氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVS.wfe.html)
 TrueTypeフォント形式のIPAmj明朝が46.7MBのところ、当該WebFontを埋め込んだHTMLは122KBに。
 ![氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](nameivs.png)
 
