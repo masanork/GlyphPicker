@@ -38,19 +38,19 @@ bold = "ShipporiMincho-OTF-ExtraBold.otf"
 serif = "ShipporiMincho-OTF-Regular.otf"
 ```
 
-以下にNameIVS.htmlに含まれる文字を抽出してWebFontを生成し、WebFontを埋め込んだ NameIVS.wfe.html を生成する例を示します。
-
-``` bash
-python mkwfe.py NameIVS.html
-# NameIVS.html.woff2と、そのWebFontを参照するNameIVS.wf.html、
-# WebFontを埋め込んだNameIVS.wfe.htmlを生成
-```
-
 青空文庫のテキストファイルを整形するツールとして、aozip2txt.pyを用意しています。例えば夏目漱石の[草枕](https://www.aozora.gr.jp/cards/000148/files/776_ruby_6020.zip)を縦書きHTMLに整形する場合、以下のようにします。
 
 ``` bash
 python aoz2html.py 776_ruby_6020.zip
 # 776_ruby_6020.zipを展開して、776_ruby_6020.htmlを生成
+```
+
+以下にNameIVS.htmlに含まれる文字を抽出してWebFontを生成し、WebFontを埋め込んだ NameIVS.wfe.html を生成する例を示します。当該異体字セレクターに対応したグリフを持っているフォントでないと、正しく書き分けることができません。このデモでは[IPAmj明朝](https://moji.or.jp/mojikiban/font/)を利用しています。
+
+``` bash
+python mkwfe.py NameIVS.html
+# NameIVS.html.woff2と、そのWebFontを参照するNameIVS.wf.html、
+# WebFontを埋め込んだNameIVS.wfe.htmlを生成
 ```
 
 WebFontサーバーを立ち上げて動的にWebFontを生成する例。
