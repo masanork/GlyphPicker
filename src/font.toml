@@ -1,0 +1,11 @@
+[font]
+directory = "fonts/"
+
+# デフォルトのフォント設定
+default = "NotoSansJP-VariableFont_wght.ttf"
+#default = "ipamjm.ttf"
+
+# さまざまなスタイルのフォント設定
+[font.styles]
+bold = "ShipporiMincho-OTF-ExtraBold.otf"
+serif = "ShipporiMincho-OTF-Regular.otf"

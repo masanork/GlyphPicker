@@ -1,14 +1,20 @@
-# GlyphPicker.py
-
 from fontTools.ttLib import TTFont
 from fontTools.subset import Subsetter, Options
+import toml
 
-FONT_PATH = 'your_font_file_path.ttf'
-# FONT_PATH = 'fonts/taisyokatujippoi7T5.ttf'
-# FONT_PATH = 'fonts/ShipporiMincho-OTF-Medium.otf'
+# font.tomlファイルから設定を読み込む
+with open("font.toml", "r") as file:
+    config = toml.load(file)
+    FONT_DIRECTORY = config["font"]["directory"]
+    DEFAULT_FONT = config["font"]["default"]
+    STYLES = config["font"].get("styles", {})
 
-def subset_font(text, output_file=None):
-    font = TTFont(FONT_PATH)
+def subset_font(text, style="default", output_file=None):
+    # スタイルに応じたフォントを選択
+    font_name = STYLES.get(style, DEFAULT_FONT)
+    font_path = FONT_DIRECTORY + font_name
+    
+    font = TTFont(font_path)
     
     options = Options()
     options.flavor = "woff2"

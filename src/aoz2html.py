@@ -1,6 +1,8 @@
 import re
 import zipfile
 import os
+import argparse
+from mkwfe import convert_txt_to_html, append_webfont_to_html, write_file_content
 
 def load_gaiji_table_corrected():
     with open('jisx0213-2004-std.txt') as f:
@@ -49,9 +51,30 @@ def process_zip(zip_file_name):
                         of.write(content)
     return output_file_name
 
+def aozip_to_html(input_file_name, horizontal=False):
+    if input_file_name.endswith('.zip'):
+        txt_file_name = process_zip(input_file_name)
+    elif input_file_name.endswith('.txt'):
+        txt_file_name = input_file_name
+    else:
+        raise ValueError(f"Unsupported file type: {input_file_name}")
+
+    with open(txt_file_name, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    # mkwfe.py の関数を使用してHTMLに変換
+    html_content = convert_txt_to_html(content, vertical=not horizontal)
+    output_html_name = os.path.splitext(input_file_name)[0] + ".html"
+
+    # HTMLファイルを保存
+    write_file_content(output_html_name, html_content)
+    return output_html_name
+
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) <= 1:
-        print(f'usage: {sys.argv[0]} <zip_file_name>')
-        exit()
-    process_zip(sys.argv[1])
+    parser = argparse.ArgumentParser(description="Convert Aozora Bunko zip file to HTML with embedded fonts.")
+    parser.add_argument("zip_file_name", type=str, help="Aozora Bunko zip file to process.")
+    parser.add_argument("-ho", "--horizontal", action="store_true", help="Convert TXT to horizontal writing mode in HTML.")
+    args = parser.parse_args()
+
+    output_html_name = aozip_to_html(args.zip_file_name, horizontal=args.horizontal)
+    print(f"Converted to: {output_html_name}")
