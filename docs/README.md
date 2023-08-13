@@ -1,7 +1,7 @@
-GlyphPicker: TTFからグリフを抽出しHTMLに埋込
+GlyphPicker: TTFからグリフを抽出してHTMLに埋込
 ===
 
-GlyphPickerは、TrueTypeフォントから必要なグラフだけを抜き出してWebFontを生成し、Data URIとしてHTMLに埋め込むツールです。日本語は文字数が多いことから、フォントサイズが大きくなりがちで、テキストのまま様々な書体を組み合わせて使うことが難しかったのですが、実際に使われているグリフだけを抜き出してHTMLに埋め込むことで、多様な端末環境を対象に様々な書体を組み合わせたり、氏名の異体字など特殊な字形を表示することが容易になります。
+GlyphPickerは、TrueTypeフォントから本文中に含まれる文字の表示に必要なグラフだけを抜き出してWebFontを生成し、Data URIとしてHTMLに埋め込むツールです。日本語は文字数が多いことから、フォントサイズが大きくなりがちで、テキストのまま様々な書体を組み合わせて使うことが難しかったのですが、実際に使われているグリフだけを抜き出してHTMLに埋め込むことで、多様な端末環境を対象に様々な書体を組み合わせたり、氏名の異体字など特殊な字形を表示することが容易になります。
 
 利用例
 ---
@@ -19,8 +19,9 @@ TrueTypeフォント形式のIPAmj明朝が46.7MBのところ、当該WebFontを
 Python3.x bs4 fonttools Brotli Flask toml が必要です。
 
 使い方
+
 ---
-コマンドラインから呼び出して渡されたコンテンツに含まれる文字をWebFontとして切り出してHTMLに埋め込む mkwfe.py 、題名など個別の文字をWebFont Base URIとしてCSSに簡単に張り付けられるように出力する str2wfb64.py、WebFontサーバーとして動作する FontServer.py、青空文庫のzipファイルをフォント埋込HTMLに変換する aoz2html.py から構成されます。
+コマンドラインから呼び出して渡されたコンテンツに含まれる文字をWebFontとして切り出してHTMLに埋め込む mkwfe.py 、題名など個別の文字をWebFont Data URIとしてCSSに簡単に張り付けられるように出力する str2wfb64.py、WebFontサーバーとして動作する FontServer.py、青空文庫のzipファイルやテキストファイルをフォント埋込HTMLに変換する aoz2html.py 等から構成されています。
 
 まず、ソースコードと同じディレクトリに利用したいフォントを配置し、font.tomlで参照するフォントを実際のパスに変更してください。例えば下の例では、標準フォントとしてNotoSans、BoldとSerifでは『草枕』のデモで利用している[しっぽり明朝](https://fontdasu.com/shippori-mincho/)を参照するように設定しています。
 
