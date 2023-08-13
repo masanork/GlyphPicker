@@ -65,5 +65,5 @@ Webサーバーを立ち上げたら、ブラウザで [テストページ http:
 ---
 
 デモにあたっては[青空文庫](https://www.aozora.gr.jp/)、 [しっぽり明朝](https://fontdasu.com/shippori-mincho/)、[IPAmj明朝](https://moji.or.jp/mojikiban/font/) を利用させていただきました。
-aozip2txt.pyの作成、『青空文庫』の外字や注釈を整形するに当たっては、[「青空文庫の外字をPythonでUnicodeに置換」](https://qiita.com/kichiki/items/bb65f7b57e09789a05ce)を参考にさせていただきました。
+aoz2html.pyの作成、『青空文庫』の外字や注釈を整形するに当たっては、[「青空文庫の外字をPythonでUnicodeに置換」](https://qiita.com/kichiki/items/bb65f7b57e09789a05ce)を参考にさせていただきました。
 本プログラムの作成に当たっては、ChatGPT Code Interpreter、Github Copilotの出力を利用しています。
