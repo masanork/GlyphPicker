@@ -45,8 +45,11 @@ def process_zip(zip_file_name):
                     content = remove_ruby_corrected(content)
                     content = remove_section_and_notes(content)
                     content = remove_all_notes(content)
+                    # Check for "_ruby_" in filename and replace with "_"
+                    base_name = os.path.basename(name)
+                    base_name = base_name.replace("_ruby_", "_")
                     # Save the processed file in the same directory as the original file
-                    output_file_name = os.path.join(os.path.dirname(zip_file_name), name)
+                    output_file_name = os.path.join(os.path.dirname(zip_file_name), base_name)
                     with open(output_file_name, 'w', encoding='utf-8') as of:
                         of.write(content)
     return output_file_name
@@ -64,7 +67,10 @@ def aozip_to_html(input_file_name, horizontal=False):
 
     # mkwfe.py の関数を使用してHTMLに変換
     html_content = convert_txt_to_html(content, vertical=not horizontal)
-    output_html_name = os.path.splitext(input_file_name)[0] + ".html"
+    # Check for "_ruby_" in filename and replace with "_"
+    base_html_name = os.path.splitext(input_file_name)[0]
+    base_html_name = base_html_name.replace("_ruby_", "_")
+    output_html_name = base_html_name + ".html"
 
     # HTMLファイルを保存
     write_file_content(output_html_name, html_content)
