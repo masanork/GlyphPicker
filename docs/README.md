@@ -6,7 +6,7 @@ GlyphPickerは、TrueTypeフォントから本文中に含まれる文字の表�
 利用例
 ---
 
-[青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](776_ruby_6020.html)
+[青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](776_6020.html)
 しっぽり明朝 v3が10MBのところ、必要なグリフを抜き出したWebFontは1.2MB、当該WebFontをData URIとして埋め込んだHTMLは約2.1MBに。
 ![青空文庫 夏目漱石『草枕』＋しっぽり明朝 v3](kusamakura.png)
 [氏名異体字の書き分けと生成したWebFontのHTMLへのエンベッド](NameIVS.wfe.html)

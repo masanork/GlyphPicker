@@ -24,7 +24,7 @@ def generate_font_data_uri(text, font_style="default"):
     return f"data:application/font-woff2;charset=utf-8;base64,{base64_encoded_font}"
 
 def convert_txt_to_html(txt_content, vertical=False):
-    vertical_style = "writing-mode: vertical-rl; text-orientation: mixed; line-height: 1.5; font-size: 2em;" if vertical else "line-height: 1.5; font-size: 1.5em;"
+    vertical_style = "writing-mode: vertical-rl; text-orientation: mixed; line-height: 1.5; font-size: 1.5em;" if vertical else "line-height: 1.5; font-size: 1.5em;"
     sepia_background = "background-color: #F4ECD8;"
     
     title, author, content = extract_title_and_author(txt_content)
