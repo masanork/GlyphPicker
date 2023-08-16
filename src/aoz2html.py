@@ -67,11 +67,10 @@ def aozip_to_html(input_file_name, horizontal=False):
 
     # mkwfe.py の関数を使用してHTMLに変換
     html_content = convert_txt_to_html(content, vertical=not horizontal)
-    # Check for "_ruby_" in filename and replace with "_"
+    # Check for "_ruby_" or "_ruby" in filename and replace with "_"
     base_html_name = os.path.splitext(input_file_name)[0]
-    base_html_name = base_html_name.replace("_ruby_", "_")
+    base_html_name = base_html_name.replace("_ruby_", "_").replace("_ruby", "")
     output_html_name = base_html_name + ".html"
-
     # HTMLファイルを保存
     write_file_content(output_html_name, html_content)
     return output_html_name
