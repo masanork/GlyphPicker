@@ -3,6 +3,7 @@ FONT_PATH = "fonts/"
 
 # さまざまなスタイルのフォント設定
 [font.styles]
+# default = ["NotoSerifJP-Regular.otf","NotoSerifSC-Regular.otf", "NotoSerifKR-Regular.otf", "NotoSerifTC-Regular.otf"]
 default = ["ipamjm.ttf"]
 bold = ["ShipporiMincho-OTF-ExtraBold.otf"]
 serif = ["ShipporiMincho-OTF-Regular.otf"]

@@ -17,6 +17,7 @@ def subset_font(text, style="default", output_file=None):
 
     # Load the main font (first font in the list)
     main_font_path = FONT_PATH + font_list[0]
+    print(f"Loading main font: {main_font_path}")
     font = TTFont(main_font_path)
 
     # Check for missing glyphs in the main font and try to fetch them from fallback fonts
@@ -24,6 +25,7 @@ def subset_font(text, style="default", output_file=None):
     missing_glyphs = [char for char in text if ord(char) not in font.getBestCmap() and not (0 <= ord(char) <= 0x1f)]
 
     for fallback_font_name in font_list[1:]:
+        print(f"Loading fallback font: {fallback_font_name}")
         if not missing_glyphs:
             break
 
@@ -37,11 +39,16 @@ def subset_font(text, style="default", output_file=None):
                 font['glyf'][char] = fallback_font['glyf'][char]
                 font['cmap'].tables[0].cmap[ord(char)] = char
                 missing_glyphs.remove(char)
+            elif ord(char) >= 0xFE00 and ord(char) <= 0xFE0F:
+                # Skip warning message for variation selectors
+                missing_glyphs.remove(char)
+            else:
+                print(f"Glyph not found for codepoint: {hex(ord(char))}")
 
-    # If there are still missing glyphs after checking all fallbacks, raise an error
-    if missing_glyphs:
-        missing_codepoints = [hex(ord(char)) for char in missing_glyphs]
-        print(f"Glyphs not found for codepoints: {', '.join(missing_codepoints)}")
+        # If there are still missing glyphs after checking the fallback font, print a warning message
+        if missing_glyphs:
+            missing_codepoints = [hex(ord(char)) for char in missing_glyphs]
+            print(f"Warning: Glyphs not found for codepoints: {', '.join(missing_codepoints)}")
 
     options = Options()
     options.flavor = "woff2"
