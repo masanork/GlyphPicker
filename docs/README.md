@@ -61,6 +61,17 @@ python FontServer.py
 
 Webサーバーを立ち上げたら、ブラウザで [テストページ http://127.0.0.1:5000/test](http://127.0.0.1:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
 
+異なる符号位置に対応した複数フォントファイルの組み合わせ
+---
+
+mkfontindex.py fontsディレクトリにあるフォントファイルについて、対応する文字とフォント名のインディックスをCSVファイルとして作成
+mkfontcss.py コマンドライン引数で指定されたファイルについて、含まれるそれぞれの文字をfontindex.csvから検索し、それぞれの文字のグリフを抽出してData URIとして埋め込んだCSSと、CSSを呼び出すHTMLを作成
+
+``` bash
+python mkfontindex.py # フォントファイルの追加時に実行する必要
+python mkfontcss.py data.html # data.htmlに含まれる文字を抽出して対応するWebFontをdata.cssとして作成、それを呼び出すdata.wf.htmlも作成
+```
+
 謝辞
 ---
 
