@@ -6,9 +6,13 @@ import base64
 from fontTools.ttLib import TTFont
 from fontTools.subset import Subsetter
 
-def load_font_index(fonts_dir="fonts"):
+def load_font_index(style=None, fonts_dir="fonts"):
+    # --style オプションに基づいてCSVの名前を設定
+    csv_name = style + ".csv" if style else "fontindex.csv"
+    csv_path = os.path.join(fonts_dir, csv_name)
+    
     font_index = {}
-    with open(os.path.join(fonts_dir, "fontindex.csv"), 'r', encoding='utf-8') as csvfile:
+    with open(csv_path, 'r', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         next(reader)  # Skip header
         for row in reader:
@@ -69,12 +73,13 @@ def inject_css_into_html(html_file, css_file):
 def main():
     parser = argparse.ArgumentParser(description='Generate CSS with embedded font data for specified HTML file and update the HTML file to use the font.')
     parser.add_argument('file', help='The HTML file to process.')
+    parser.add_argument('--style', help='Style name for selecting the appropriate CSV font index.')
     args = parser.parse_args()
 
     with open(args.file, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    font_index = load_font_index()
+    font_index = load_font_index(style=args.style)
     used_fonts = {font_index[char] for char in text if char in font_index}
 
     css_content = ""
