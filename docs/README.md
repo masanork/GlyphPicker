@@ -19,8 +19,8 @@ TrueTypeフォント形式のIPAmj明朝が46.7MBのところ、当該WebFontを
 Python3.x bs4 fonttools Brotli Flask toml が必要です。
 
 使い方
-
 ---
+
 コマンドラインから呼び出して渡されたコンテンツに含まれる文字をWebFontとして切り出してHTMLに埋め込む mkwfe.py 、題名など個別の文字をWebFont Data URIとしてCSSに簡単に張り付けられるように出力する str2wfb64.py、WebFontサーバーとして動作する FontServer.py、青空文庫のzipファイルやテキストファイルをフォント埋込HTMLに変換する aoz2html.py 等から構成されています。
 
 まず、ソースコードと同じディレクトリに利用したいフォントを配置し、font.tomlで参照するフォントを実際のパスに変更してください。例えば下の例では、標準フォントとしてNotoSans、BoldとSerifでは『草枕』のデモで利用している[しっぽり明朝](https://fontdasu.com/shippori-mincho/)を参照するように設定しています。
@@ -62,7 +62,6 @@ python FontServer.py
 Webサーバーを立ち上げたら、ブラウザで [テストページ http://127.0.0.1:5000/test](http://127.0.0.1:5000/test) を開いてください。必要なグリフのみ抽出されたフォントを使ったテストページが表示されます。
 
 異なる符号位置に対応した複数フォントファイルの組み合わせ
----
 
 mkfontindex.py fontsディレクトリにあるフォントファイルについて、対応する文字とフォント名のインディックスをCSVファイルとして作成
 mkfontcss.py コマンドライン引数で指定されたファイルについて、含まれるそれぞれの文字をfontindex.csvから検索し、それぞれの文字のグリフを抽出してData URIとして埋め込んだCSSと、CSSを呼び出すHTMLを作成
